@@ -1,0 +1,75 @@
+<!--Reactive Form and validations(Built-in and custom)-->
+
+<form (ngSubmit)="submit()" [formGroup]="signupform">
+
+    <label for="username">User Name:</label>
+    <input type="text" class="form-control" formControlName="username">
+    <div *ngIf="!user?.valid && (user?.dirty || user?.touched)" class="error">
+        <div *ngIf="user.errors.required">
+          <small>Username is required</small>
+        </div>
+      </div>
+    
+    <label for="name">Name:</label>
+    <input type="text" class="form-control" formControlName="name">
+    <div *ngIf="!uname?.valid && (uname?.dirty || uname?.touched)" class="error">
+        <div *ngIf="uname.errors.required">
+          <small>Name is required</small>
+        </div>
+      </div>
+    
+
+    <label for="email">Email:</label>
+    <input type="email" class="form-control" formControlName="email">
+    <div *ngIf="!uemail?.valid && (uemail?.dirty || uemail?.touched)" class="error">
+        <div *ngIf="uemail.errors.required">
+          <small>Email is required</small>
+        </div>
+        <div *ngIf="uemail.errors.email">
+          <small>Invalid Email Address</small>
+        </div>
+      </div>
+    
+    <label for="password">Password:</label>
+    <input type="password" class="form-control" formControlName="password">
+    <div *ngIf="!upassword?.valid && (upassword?.dirty || upassword?.touched)" class="error">
+        <div *ngIf="upassword.errors.required">
+          <small>Password is required</small>
+        </div>
+        <div *ngIf="upassword.errors.minlength">
+          <small>Password Minimum Length is {{upassword.errors.minlength?.requiredLength}}</small>
+        </div>
+      </div>
+    
+    <label for="gender">Gender:</label><br>
+    <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" value="male" formControlName="gender">
+        <label class="form-check-label" for="gender">male</label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" value="female" formControlName="gender">
+        <label class="form-check-label" for="gender">female</label>
+      </div>
+      <div *ngIf="!ugender?.valid && (ugender?.dirty || ugender?.touched)" class="error">
+        <div *ngIf="ugender.errors.required">
+          <small>Gender is required</small>
+        </div>
+      </div>
+      <br>
+    
+      <!--This is used for custom validation. TO check whether code acceptts only two values [CODE368, CODE284]-->
+      <label for="code">Code:</label>
+      <input type="text" class="form-control" name="code" formControlName="code"/>
+      <div *ngIf="!ucode?.valid && (ucode?.dirty || ucode?.touched)" class="error">
+        <div *ngIf="ucode.errors.required">
+          <small>Code is required</small>
+        </div>
+        <div *ngIf="ucode.errors.code">
+          <small> should be one of these {{ucode.errors.requiredValue1}} or {{ucode.errors.requiredValue2}}</small>
+        </div>
+      </div>
+    
+    
+    <button class="btn btn-success" [disabled]="signupform.invalid">Signup</button>
+    
+    </form>

@@ -1,0 +1,19 @@
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Category</th>
+        <th>Image</th>
+    </tr>
+    <tr *ngFor="let product of Products; let i = index">
+        <td>{{i+1}}</td>
+        <td>{{product.name}}</td>
+        <td>{{product.price}}</td>
+        <td>{{product.category}}</td>
+        <td><img src="{{product.image}}"/></td>
+
+        <td><button class="btn btn-secondary">Add to cart</button></td>
+        <td *ngIf="isAdmin"><button class="btn btn-danger" (click)="delete(i)">Delete</button></td>
+    </tr>
+</table>

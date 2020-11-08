@@ -1,0 +1,22 @@
+<table>
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Price</th>
+        <th>Category</th>
+        <th>Image</th>
+    </tr>
+    <tr *ngFor="let product of products; let i = index">
+        <td>{{i+1}}</td>
+        <td>{{product.name}}</td>
+        <td>{{product.price}}</td>
+        <td>{{product.category}}</td>
+        <td><img src="{{product.image}}"/></td>
+
+        <td><button class="btn btn-secondary">Add to cart</button></td>
+        <!-- If we do not use @output in priceUpdate component then use this 
+            <td *ngIf="isAdmin"><app-priceupdate [pricevalue]="product.price" [index]="i"></app-priceupdate></td> 
+        -->
+        <td *ngIf="isAdmin"><app-priceupdate [pricevalue]="product.price" (update)="updatePrice($event, i)"></app-priceupdate></td>
+    </tr>
+</table>
