@@ -3,7 +3,7 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import { RouterTestingModule } from '@angular/router/testing';
 
-fdescribe('AppComponent', () => {  //using fdescribe will run only this test suit not others
+describe('AppComponent', () => {  //using fdescribe will run only this test suit not others
   beforeEach(async(() => {
     TestBed.configureTestingModule({
       declarations: [

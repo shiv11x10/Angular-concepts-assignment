@@ -19,7 +19,7 @@ describe('InventoryComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create InventoryComponent', () => {
     expect(component).toBeTruthy();
   });
 });

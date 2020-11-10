@@ -3,7 +3,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { ReactiveSignupComponent } from './reactive-signup.component';
 import { element } from 'protractor';
 
-fdescribe('ReactiveSignupComponent', () => {
+describe('ReactiveSignupComponent', () => {
   let component: ReactiveSignupComponent;
   let fixture: ComponentFixture<ReactiveSignupComponent>;
 
