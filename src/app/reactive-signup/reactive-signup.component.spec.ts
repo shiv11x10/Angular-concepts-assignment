@@ -1,8 +1,9 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ReactiveSignupComponent } from './reactive-signup.component';
+import { element } from 'protractor';
 
-describe('ReactiveSignupComponent', () => {
+fdescribe('ReactiveSignupComponent', () => {
   let component: ReactiveSignupComponent;
   let fixture: ComponentFixture<ReactiveSignupComponent>;
 
@@ -19,7 +20,13 @@ describe('ReactiveSignupComponent', () => {
     fixture.detectChanges();
   });
 
-  it('should create', () => {
+  it('should create ReactiveSignupComponent', () => {
     expect(component).toBeTruthy();
+  });
+
+  it('Valid Email', () => {
+    let email = component.signupform.controls.email;
+    email.setValue('shivam@gmail');
+    expect(email.valid).toBeTruthy();
   });
 });

@@ -2,7 +2,6 @@
 
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { UserDetailsService } from '../UserDetails.service';
 import { code } from './reactiveCode.validator';
 
 @Component({
@@ -13,7 +12,7 @@ import { code } from './reactiveCode.validator';
 export class ReactiveSignupComponent implements OnInit {
   signupform: FormGroup
 
-  constructor(private userservice: UserDetailsService) { 
+  constructor() { 
     this.signupform = new FormGroup({
       username: new FormControl('', Validators.required),
       name:new FormControl('', Validators.required),

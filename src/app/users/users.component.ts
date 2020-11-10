@@ -45,6 +45,6 @@ export class UsersComponent implements OnInit {
     alert(searchedProduct);
     // alert(criteria);
     // alert("Lost focus");
-}
+  }
 
 }
