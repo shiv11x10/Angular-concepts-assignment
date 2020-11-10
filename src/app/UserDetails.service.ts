@@ -13,11 +13,11 @@ export class UserDetailsService {
     constructor(private http:HttpClient) { }
 
     getUsers():Observable<any> {
-        return this.http.get('http://jsonplaceholder.typicode.com/users');
+        return this.http.get('https://jsonplaceholder.typicode.com/users');
     }
 
     postUsers(username:string, name:string, email:string):Observable<any> {
-        return this.http.post('http://jsonplaceholder.typicode.com/users', {
+        return this.http.post('https://jsonplaceholder.typicode.com/users', {
             'username': username,
             'name' : name,
             'email' : email 
@@ -25,6 +25,6 @@ export class UserDetailsService {
     }
 
     deleteUser(index:number):Observable<any> {
-        return this.http.delete('http://jsonplaceholder.typicode.com/users/'+index);
+        return this.http.delete('https://jsonplaceholder.typicode.com/users/'+index);
     }
 }
